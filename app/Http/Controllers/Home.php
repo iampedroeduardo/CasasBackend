@@ -42,4 +42,15 @@ class Home extends Controller
         $model->save();
         return redirect()->to('/');
     }
+
+    public function pesquisar(Request $request){
+        $model = new CasaModel();
+        $queries = [];
+        if($request->tipo!='ambos'){
+            array_push($queries,['tipo','=',$request->tipo]);
+        }
+        array_push($queries,[$request->campo,'like','%'.$request->pesquisa.'%']);
+        $data['dados'] = $model ->where($queries)->orderBy($request->ordempor,$request->ordem)->get();
+        return view('index',$data);
+    }
 }

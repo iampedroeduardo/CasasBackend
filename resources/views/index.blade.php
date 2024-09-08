@@ -44,14 +44,26 @@
     <div class="container">
         <header>
             <form action="pesquisar" method="post">
+                @csrf
                 <input type="search" name="pesquisa">
                 <select name="campo">
-                    <option value="nome">Nome</option>
-                    <option value="laboratorio">Laboratório</option>
+                    <option value="" disabled>Pesquisar por</option>
+                    <option value="endereco">Endereço</option>
+                    <option value="imobiliaria">Imobiliária</option>
+                </select>
+                <select name="tipo">
+                    <option value="ambos">Ambos</option>
+                    <option value="aluguel">Aluguel</option>
+                    <option value="venda">Venda</option>
+                </select>
+                <select name="ordempor">
+                    <option value="" disabled>Ordenar por</option>
+                    <option value="preco">Preço</option>
+                    <option value="endereco">Endereço</option>
                 </select>
                 <select name="ordem">
-                    <option value="preco">Preço</option>
-                    <option value="quantidade">Quantidade</option>
+                    <option value="asc">Crescente</option>
+                    <option value="desc">Decrescente</option>
                 </select>
                 <button type="submit">Pesquisar</button>
             </form>
