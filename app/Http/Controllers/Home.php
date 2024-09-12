@@ -53,4 +53,20 @@ class Home extends Controller
         $data['dados'] = $model ->where($queries)->orderBy($request->ordempor,$request->ordem)->get();
         return view('index',$data);
     }
+
+    public function editar($id){
+        $model = new CasaModel();
+        $data = $model:: where('id',$id) -> first();
+        return view('editar',$data);
+    }
+
+    public function update(Request $request){
+        $model = new CasaModel();
+        $model->endereco = $request->endereco;
+        $model->preco = $request->preco;
+        $model->imobiliaria = $request->imobiliaria;
+        $model->tipo = $request->tipo;
+        CasaModel:: find($model)->update($model);
+        return redirect()->to('/');
+    }
 }

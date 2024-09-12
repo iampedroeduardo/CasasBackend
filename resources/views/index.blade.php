@@ -38,7 +38,7 @@
         }
 
     </style>
-    <title>Farmácia</title>
+    <title>Imobiliária</title>
 </head>
 <body>
     <div class="container">
@@ -83,6 +83,8 @@
                             <td>Imobiliária</td>
                             <td>Preço</td>
                             <td>Tipo</td>
+                            <td>Editar</td>
+                            <td>Excluir</td>
                         </tr>
                     </thead>
                 <?php 
@@ -94,6 +96,8 @@
                         <td><?=$casa['imobiliaria']?></td>
                         <td><?=$casa['preco']?></td>
                         <td><?=$casa['tipo']?></td>
+                        <td><a href="{{ url('editar/'.$casa ->id) }}">aqui</a></td>
+                        <td><a></a></td>
                     </tr>
                 <?php
                     }
