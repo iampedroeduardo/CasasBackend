@@ -61,12 +61,18 @@ class Home extends Controller
     }
 
     public function update(Request $request){
-        $model = new CasaModel();
-        $model->endereco = $request->endereco;
-        $model->preco = $request->preco;
-        $model->imobiliaria = $request->imobiliaria;
-        $model->tipo = $request->tipo;
-        CasaModel:: find($model)->update($model);
+        $casa = CasaModel::find($request->id);
+        $casa->endereco = $request->endereco;
+        $casa->imobiliaria = $request->imobiliaria;
+        $casa->tipo = $request->tipo;
+        $casa->preco = $request->preco;
+        $casa->save();
+        return redirect()->to('/');
+    }
+
+    public function remover($id){
+        $casa = CasaModel::find($id);
+        $casa->delete();
         return redirect()->to('/');
     }
 }

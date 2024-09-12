@@ -47,6 +47,7 @@
             <label for="preco">Preço:</label>
             <input type="number" step="0.01" name="preco" value="<?=$preco?>">
             <br>
+            <input type="hidden" name="id" value="<?=$id?>">
             <input type="submit" value="Editar">
         </form>
     </div>

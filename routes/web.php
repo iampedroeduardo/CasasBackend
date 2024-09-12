@@ -9,3 +9,4 @@ Route::post('/cadastrar', [Home::class,'cadastrar'] );
 Route::post('/pesquisar', [Home::class,'pesquisar'] );
 Route::get('/editar/{id}', [Home::class,'editar'] );
 Route::post('/editar/{id}', [Home::class,'update'] );
+Route::get('/remover/{id}', [Home::class,'remover'] );

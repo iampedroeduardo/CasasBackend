@@ -71,7 +71,7 @@
         <br>
         <div class="cadastro">
             <form action="cadastro" method="get">
-                <button type="submit">Cadastrar Medicamento</button>
+                <button type="submit">Cadastrar Casa</button>
             </form>
         </div>
         <br>
@@ -97,7 +97,7 @@
                         <td><?=$casa['preco']?></td>
                         <td><?=$casa['tipo']?></td>
                         <td><a href="{{ url('editar/'.$casa ->id) }}">aqui</a></td>
-                        <td><a></a></td>
+                        <td><a href="{{ url('remover/'.$casa ->id) }}">aqui</a></td>
                     </tr>
                 <?php
                     }
